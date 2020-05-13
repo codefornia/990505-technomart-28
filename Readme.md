@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Irina Slukina](https://up.htmlacademy.ru/htmlcss/28/user/990505).
-* Наставник: `Неизвестно`.
+* Наставник: [Ivan Jarkov](https://htmlacademy.ru/profile/stalyer).
 
 ---
 
