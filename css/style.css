@@ -29,12 +29,19 @@
   --font-pt-sans: 'Pt Sans', 'Arial', sans serif;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* GLOBAL */
@@ -86,7 +93,8 @@ img {
 
 /* HEADER */
 .container {
-  width: 940px;
+  width: 960px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -496,7 +504,9 @@ img {
 .footer-social {
   list-style: none;
 }
-
+.footer-address {
+  font-style: normal;
+}
 .popup-order {
   /* position: fixed;*/
   width: 620px;
@@ -620,7 +630,7 @@ img {
   border: 1px solid #E5E5E5;
 }
 
-fieldset {
+.filter-fieldset {
   border: none;
 }
 

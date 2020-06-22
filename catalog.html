@@ -14,7 +14,7 @@
 <header class="header">
   <div class="header-menu">
     <div class="header-menu-container container">
-      <a class="header-logo"><img src="img/logo-technomart.svg" width="108" height="18" alt="Магазин «Техномарт»"></a>
+      <a href="index.html" class="header-logo"><img src="img/logo-technomart.svg" width="108" height="18" alt="Магазин «Техномарт»"></a>
       <form action="https://echo.htmlacademy.ru" method="get">
         <label for="header-search" class="visually-hidden">Строка поиска</label>
         <input id="header-search" type="search" name="search" placeholder="Поиск:">
@@ -46,7 +46,7 @@
   </div>
   <nav class="header-nav container">
     <ul>
-      <li><a>Главная</a></li>
+      <li><a href="index.html">Главная</a></li>
       <li><a href="#">Компания</a></li>
       <li><a href="catalog.html">Каталог</a></li>
       <li><a href="#">Новости</a></li>
@@ -69,14 +69,14 @@
     <section class="product-catalog">
       <h2>Фильтр:</h2>
       <form action="https://echo.htmlacademy.ru" method="get">
-        <fieldset>
+        <fieldset class="filter-fieldset">
           <legend class="visually-hidden">Диапазон цен:</legend>
           <label for="price-min" class="visually-hidden">минимальная цена</label>
           <input type="number" id="price-min" name="min" value="0">
           <label for="price-max" class="visually-hidden">максимальная цена</label>
           <input type="number" id="price-max" name="max" value="30000">
         </fieldset>
-        <fieldset>
+        <fieldset class="filter-fieldset">
           <legend class="manufacturers-legend">Производители:</legend>
           <ul class="manufacturers-sort">
             <li>
@@ -101,7 +101,7 @@
             </li>
           </ul>
         </fieldset>
-        <fieldset>
+        <fieldset class="filter-fieldset">
           <legend class="power-legend">Тип питания:</legend>
           <ul class="power-sort">
             <li>
@@ -254,7 +254,7 @@
             alt="Лого «Техномарт»"></a>
     <section>
       <h2 class="visually-hidden">Наши контакты</h2>
-      <address>г.&nbsp;Санкт-Петербург, ул.&nbsp;Б.&nbsp;Конюшенная, д.&nbsp;19/8</address>
+      <address class="footer-address">г.&nbsp;Санкт-Петербург, ул.&nbsp;Б.&nbsp;Конюшенная, д.&nbsp;19/8</address>
       <a href="tel:+78125550555">+7&nbsp;(812)&nbsp;555-05-55</a>
     </section>
     <ul class="company-list">
