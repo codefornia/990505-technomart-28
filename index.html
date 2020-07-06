@@ -73,12 +73,12 @@
       <div class="promo-slide promo-slide-perforators promo-slide-current">
         <h3 class="slide-heading">Перфораторы</h3>
         <p class="slide-paragraph">Настоящие мужские игрушки</p>
-        <a href="#" class="button-red slide-button-red">открыть каталог</a>
+        <a href="catalog.html" class="button-red">открыть каталог</a>
       </div>
       <div class="promo-slide promo-slide-drills">
         <h3 class="slide-heading">Дрели</h3>
         <p class="slide-paragraph">Соседям на радость</p>
-        <a href="#" class="button-red">открыть каталог</a>
+        <a href="catalog.html" class="button-red">открыть каталог</a>
       </div>
     </article>
     <article class="promo-discounts">
@@ -183,7 +183,6 @@
       <h2 class="main-service-heading">Сервисы</h2>
       <p class="main-service-p-all">Хороший интернет-магазин отличается от плохого не только ценами!<br>
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-      <div id="content">
         <div class="main-service-block">
           <div class="main-service-tabs">
             <button class="tabs-button tabs-button-current" data-id="delivery">Доставка</button>
@@ -212,7 +211,6 @@
               <a href="#" class="button-red" target="_blank">Отправить заявку</a>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -235,7 +233,7 @@
     <section class="main-contacts">
       <h2 class="main-contacts-heading">Контакты</h2>
       <p class="main-contacts-description">Вы можете забрать товар сами,<br>заехав в наш офис:</p>
-      <a href="#" class="interactive-map"><img src="img/map.jpg" width="300" height="158"
+      <a href="https://yandex.ru/maps/-/CCQh7UcF~B" class="interactive-map" target="_blank"><img src="img/map.jpg" width="300" height="158"
                                                alt="Адрес офиса «Техномарт»: г.&nbsp;Санкт-Петербург, ул.&nbsp;Б.&nbsp;Конюшенная, д.&nbsp;19/8"></a>
       <a href="#" class="button-red button-about-contacts">Заблудились? Напишите нам!</a>
     </section>
@@ -346,9 +344,8 @@
       </div>
     </div>
   </form>
-  <button class="popup-order-close button-close" type="button" title="Закрыть"><span class="visually-hidden">Закрыть</span></button>
+  <button class="popup-order-close button-close" type="button" aria-label="Закрыть"></button>
 </section>
-<div>
   <!-- интерактивная карта -->
   <div class="popup-map">
     <iframe class="iframe-map"
@@ -356,7 +353,7 @@
       width="943" height="449"></iframe>
     <img src="img/map-large.png" width="943" height="449"
          alt="Наш адрес: г.Санкт-Петербург, ул. Б. Конюшенная, д.19/8">
-    <button class="button-close-map button-close" type="button" title="Закрыть"><span class="visually-hidden">Закрыть</span></button>
+    <button class="button-close-map button-close" type="button" aria-label="Закрыть"></button>
   </div>
   <!-- добавление в корзину -->
   <section class="popup-cart">
@@ -365,8 +362,7 @@
       <button type="button" class="button-red">Оформить заказ</button>
       <button type="button" class="button-white">Продолжить покупки</button>
     </div>
-    <button type="button" class="button-close-cart button-close"><span class="visually-hidden">Закрыть</span></button>
+    <button type="button" class="button-close-cart button-close" aria-label="Закрыть"></button>
   </section>
-</div>
 </body>
 </html>
