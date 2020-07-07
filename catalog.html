@@ -14,12 +14,13 @@
 <header class="header">
   <div class="header-menu">
     <div class="header-menu-container container">
-      <a class="header-logo" href="index.html"><img src="img/logo-technomart.svg" width="108" height="18" alt="Магазин «Техномарт»"></a>
+      <a class="header-logo" href="index.html"><img src="img/logo-technomart.svg" width="108" height="18"
+                                                    alt="Магазин «Техномарт»"></a>
       <form class="header-search-form" action="https://echo.htmlacademy.ru" method="get">
         <label class="visually-hidden" for="header-search">Строка поиска</label>
         <input class="header-search-input" id="header-search" type="search" name="search" placeholder="Поиск:"
                autocomplete="off">
-        <button class="header-search-button" type="submit"><span class="visually-hidden">Поиск</span></button>
+        <button class="header-search-button" type="submit" aria-label="Поиск"></button>
       </form>
       <div class="header-purchases-list">
         <a class="purchases-bookmarks" href="#">Закладки: 0</a>
@@ -37,7 +38,14 @@
     <div class="personal-block">
       <div class="personal-account">
         <a href="#" class="personal-link">Равшан Джамшутович</a>
-        <a href="#" class="personal-logout" aria-label="Выйти из личного кабинета"></a>
+        <a href="#" class="personal-logout" aria-label="Выйти из личного кабинета">
+          <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8.5L11.125 0V6H5.125V11H11.125V17L20 8.5Z" fill="#C5C5C5"/>
+            <path
+              d="M2.10598 13.952V3.048C2.12398 2.672 2.27698 1.991 3.11598 1.991H8.14297V0H3.11598C0.937975 0 0.111975 1.81 0.0869751 3.027V13.973C0.111975 15.189 0.937975 17 3.11598 17H8.14297V15.01H3.11598C2.27698 15.01 2.12398 14.327 2.10598 13.952Z"
+              fill="#C5C5C5"/>
+          </svg>
+        </a>
       </div>
       <div class="nav-account">
         <a href="#">Мои заказы</a>
@@ -144,19 +152,27 @@
         <h2 class="sorting-heading">Сортировка:</h2>
         <ul class="sorting-list">
           <li>
-            <a href="#" class="sorting-active"><span>По цене</span></a>
+            <a href="#" class="sorting-active sorting-item"><span>По цене</span></a>
           </li>
           <li>
-            <a href="#"><span>По типу</span></a>
+            <a href="#" class="sorting-item"><span>По типу</span></a>
           </li>
           <li>
-            <a href="#"><span>По функционалу</span></a>
+            <a href="#" class="sorting-item"><span>По функционалу</span></a>
           </li>
           <li>
-            <a href="#" aria-label="По убыванию"></a>
+            <a href="#" class="sorting-active sorting-item-arrow" aria-label="По возрастанию">
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 0L11 10L0 10" fill="#C5C5C5"/>
+              </svg>
+            </a>
           </li>
           <li>
-            <a href="#" aria-label="По возрастанию"></a>
+            <a href="#" class="sorting-item-arrow" aria-label="По убыванию">
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10L0 0H11" fill="#C5C5C5"/>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
@@ -183,7 +199,7 @@
             <span class="price">30500 Р.</span>
             <span class="discount-price">25500 Р.</span>
           </li>
-          <li class="product-item">
+          <li class="product-item product-new">
             <div class="product-purchases-list">
               <a href="#" class="buy-botton">Купить</a>
               <a href="#" class="bookmarks-botton">В закладки</a>
@@ -193,7 +209,7 @@
             <span class="price">30500 Р.</span>
             <span class="discount-price">25500 Р.</span>
           </li>
-          <li class="product-item">
+          <li class="product-item product-new">
             <div class="product-purchases-list">
               <a href="#" class="buy-botton">Купить</a>
               <a href="#" class="bookmarks-botton">В закладки</a>
@@ -213,7 +229,7 @@
             <span class="price">30500 Р.</span>
             <span class="discount-price">25500 Р.</span>
           </li>
-          <li class="product-item">
+          <li class="product-item product-new">
             <div class="product-purchases-list">
               <a href="#" class="buy-botton">Купить</a>
               <a href="#" class="bookmarks-botton">В закладки</a>
@@ -223,7 +239,7 @@
             <span class="price"></span>
             <span class="discount-price">12500 Р.</span>
           </li>
-          <li class="product-item">
+          <li class="product-item product-new">
             <div class="product-purchases-list">
               <a href="#" class="buy-botton">Купить</a>
               <a href="#" class="bookmarks-botton">В закладки</a>
@@ -243,7 +259,7 @@
             <span class="price">30500 Р.</span>
             <span class="discount-price">25500 Р.</span>
           </li>
-          <li class="product-item">
+          <li class="product-item product-new">
             <div class="product-purchases-list">
               <a href="#" class="buy-botton">Купить</a>
               <a href="#" class="bookmarks-botton">В закладки</a>
@@ -278,7 +294,7 @@
   <div class="footer-info">
     <div class="container footer-fist-line">
       <a class="footer-logo" href="index.html"><img src="img/logo-technomart.svg" width="136" height="22"
-                                  alt="Лого «Техномарт»"></a>
+                                                    alt="Лого «Техномарт»"></a>
       <ul class="company-list">
         <li><a href="#">Компания</a></li>
         <li><a href="#">Новости</a></li>
@@ -307,7 +323,7 @@
       <section>
         <h2 class="visually-hidden">Мы в соцсетях</h2>
         <ul class="footer-social">
-          <li><a href="https://vk.com/htmlacademy" target="_blank"><span
+          <li><a href="https://vk.com/htmlacademy" target="_blank" class="social-link"><span
             class="visually-hidden">Страница Вконтакте</span>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -319,7 +335,8 @@
             </svg>
           </a>
           </li>
-          <li><a href="https://www.facebook.com/htmlacademy" target="_blank"><span class="visually-hidden">Страница Фэйсбук</span>
+          <li><a href="https://www.facebook.com/htmlacademy" target="_blank" class="social-link"><span
+            class="visually-hidden ">Страница Фэйсбук</span>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M21.8938 1.4839C33.1232 1.4839 42.2265 10.5873 42.2265 21.8169C42.2265 33.0461 33.1232 42.1494 21.8938 42.1494C10.6643 42.1494 1.56108 33.0461 1.56108 21.8169C1.56108 10.5873 10.6643 1.4839 21.8938 1.4839Z"
@@ -328,7 +345,8 @@
             </svg>
           </a>
           </li>
-          <li><a href="https://www.instagram.com/htmlacademy" target="_blank"><span class="visually-hidden">Страница Интсаграм</span>
+          <li><a href="https://www.instagram.com/htmlacademy" target="_blank" class="social-link"><span
+            class="visually-hidden">Страница Интсаграм</span>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M21.8938 1.4839C33.1233 1.4839 42.2265 10.5873 42.2265 21.8169C42.2265 33.0461 33.1233 42.1494 21.8938 42.1494C10.6643 42.1494 1.56112 33.0461 1.56112 21.8169C1.56112 10.5873 10.6643 1.4839 21.8938 1.4839Z"
