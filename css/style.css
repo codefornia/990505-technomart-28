@@ -512,7 +512,6 @@ img {
   width: 22px;
   height: 40px;
   top: 121px;
-  z-index: 1;
   background-image: url("../img/icon-left.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -532,7 +531,6 @@ img {
 .radio-controls {
   display: flex;
   position: absolute;
-  z-index: 2;
   bottom: 35px;
   left: 290px;
 }
@@ -773,6 +771,7 @@ img {
 .bookmarks-botton {
   display: block;
   font-family: var(--font-cuprum);
+  text-transform: uppercase;
   font-size: 14px;
   line-height: 18px;
   color: var(--basic-grey);
@@ -1288,10 +1287,12 @@ img {
   box-sizing: border-box;
   position: fixed;
   width: 620px;
-  left: 50%;
-  top: 50%;
-  margin-left: -310px;
-  margin-top: -215px;
+  height: min-content;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   box-shadow: 0px 4px 20px var(--basic-shadow);
   border-top: 7px solid red;
   background-color: var(--basic-white);
@@ -1361,6 +1362,7 @@ img {
   width: 100%;
   background-color: var(--basic-popup-grey);
   padding-top: 37px;
+  border-bottom: 1px solid transparent;
 }
 
 .popup-button-order {
@@ -1388,7 +1390,7 @@ img {
 }
 
 .button-close-map {
-  top: 10px;
+  top: 17px;
   right: 10px;
 }
 
@@ -1399,19 +1401,19 @@ img {
   padding: 37px 114px 37px 114px;
 }
 
-
 .popup-cart {
   display: none;
   box-sizing: border-box;
-  height: 282px;
+  height: min-content;
   width: 620px;
   position: fixed;
-  left: 50%;
-  top: 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   font-family: var(--font-cuprum);
   box-shadow: 0px 4px 20px var(--basic-shadow);
-  margin-left: -310px;
-  margin-top: -141px;
   border-top: 7px solid red;
   background-color: var(--basic-white);
   padding-top: 67px;
@@ -1458,22 +1460,28 @@ img {
 /* КАРТА*/
 .popup-map {
   display: none;
-  box-sizing: border-box;
   position: fixed;
   width: 943px;
   height: 449px;
-  left: 50%;
-  top: 50%;
-  margin-left: -472px;
-  margin-top: -225px;
-  background-color: var(--basic-white);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   box-shadow: 0px 4px 20px var(--basic-shadow);
-  border-top: 7px solid red;
+  background-color: var(--basic-red);
+  padding-top: 8px;
 }
+
 
 .iframe-map {
   position: absolute;
   border: none;
+}
+
+.iframe-map img {
+  width: 943px;
+  height: 445px;
 }
 
 /* CATALOG ---------------------------------------------------------------------------------------*/
@@ -1763,7 +1771,14 @@ img {
 .manufacturers-legend,
 .power-legend {
   font-weight: bold;
-  font-size: 17px
+  font-size: 17px;
+}
+
+.manufacturers-legend {
+  margin-bottom: 12px;
+}
+.power-legend{
+  margin-bottom: 18px;
 }
 
 .manufacturers-sort,
@@ -1773,62 +1788,110 @@ img {
   padding: 0;
   margin: 0;
 }
-
-.manufacturers-legend {
-  margin-bottom: 24px;
+.power-sort{
+margin-bottom: 26px;
+}
+.manufacturers-sort {
+  padding: 0;
+  padding-bottom: 18px;
+  margin-bottom: 23px;
+  border-bottom: 1px solid var(--basic-lightgrey);
 }
 
-.filter-option {
-  padding-left: 35px;
-  margin-bottom: 22px;
-}
-
-.filter-option label {
+.option {
   position: relative;
   display: block;
   cursor: pointer;
-  user-select: none;
+  padding: 11px 0px 11px 31px;
 }
 
-.filter-input-checkbox + label::before {
-  content: "";
+
+.check-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check-box {
   position: absolute;
-  left: -36px;
-  top: -3px;
+  left: 0px;
+  top: 9px;
   width: 23px;
-  height: 23px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1px;
+  background-color: white;
   background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
-.filter-input-checkbox:checked + label::after {
-  content: "";
-  position: absolute;
-  left: -36px;
-  top: -3px;
-  width: 27px;
-  height: 23px;
-  background-image: url("../img/checkbox-on.svg");
-  background-repeat: no-repeat;
+.check-input:checked + .check-box {
+  width: 25px;
+  height: 100%;
   background-position: 0 0;
+  background-image: url("../img/checkbox-on.svg");
 }
 
-.filter-input-checkbox:checked + label::after {
-  content: "";
-  position: absolute;
-  left: -36px;
-  top: -3px;
-  width: 27px;
-  height: 23px;
-  background-image: url("../img/checkbox-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+.check-input:hover + .check-box {
+  background-image: url("../img/checkbox-off-hover.svg");
+}
+.check-input:checked:hover + .check-box {
+  background-image: url("../img/checkbox-on-hover.svg");
+}
+.check-input:active + .check-box {
+  background-image: url("../img/checkbox-on-hover.svg");
+  opacity: 0.3;
 }
 
-/*CHECKBOX*/
+.check-input:checked:active + .check-box {
+  background-image: url("../img/checkbox-off-hover.svg");
+  opacity: 0.3;
+}
 
+/*RADIO*/
 
+.radio-option{
+  padding: 12px 0px 12px 31px;
+}
+.radio{
+  position: absolute;
+  left: 0px;
+  top: 9px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  border-radius: 1px;
+  background-color: white;
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.check-input:checked + .radio {
+  width: 25px;
+  height: 100%;
+  background-position: 0 0;
+  background-image: url("../img/radio-on.svg");
+}
+
+.check-input:hover + .radio {
+  background-image: url("../img/radio-off-hover.svg");
+}
+.check-input:checked:hover + .check-box {
+  background-image: url("../img/radio.svg");
+}
+.check-input:active + .radio {
+  background-image: url("../img/radio-on-hover.svg");
+  opacity: 0.3;
+}
+
+.check-input:checked:active + .radio {
+  background-image: url("../img/radio-off-hover.svg");
+  opacity: 0.3;
+}
+
+/*КНОПОЧКА*/
 .sort-button {
   width: 100%;
   font-size: 13px;
@@ -1836,43 +1899,7 @@ img {
   text-transform: uppercase;
   background-color: var(--basic-white);
   border: 1px solid var(--basic-lightgrey);
-  padding: 10px;
-}
-
-.power-legend {
-  margin-bottom: 29px;
-}
-
-.filter-fieldset > .manufacturers-sort {
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--basic-lightgrey);
-  margin-bottom: 23px;
-}
-
-.filter-input-radio + label::before {
-  content: "";
-  position: absolute;
-  left: -36px;
-  top: -2px;
-  width: 20px;
-  height: 20px;
-  border: 3px solid var(--basic-lightgrey);
-  border-radius: 50%;
-}
-
-.filter-input-radio:checked + label::after {
-  content: "";
-  position: absolute;
-  top: 7px;
-  left: -27px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--basic-lightgrey);
-  border-radius: 50%;
-}
-
-.filter-fieldset > .power-sort {
-  margin-bottom: 40px;
+  padding: 9px;
 }
 
 /*ПРАВАЯ ЧАСТЬ*/
@@ -1914,47 +1941,52 @@ img {
   margin: 0;
 }
 
-.sorting-item{
+.sorting-item {
   padding: 10px 0px 0px 0px;
   border-bottom: 1px dotted var(--basic-red);
   color: var(--basic-black);
 }
 
-.sorting-list>li:first-child a{
+.sorting-list > li:first-child a {
   margin-right: 71px;
 }
-.sorting-list>li:nth-child(2) a{
+
+.sorting-list > li:nth-child(2) a {
   margin-right: 65px;
 }
-.sorting-list>li:nth-child(3) a{
+
+.sorting-list > li:nth-child(3) a {
   margin-right: 37px;
 }
+
 /*СТРЕЛОЧКИ*/
 .sorting-item > span {
   opacity: 0.3;
 }
 
-.sorting-item:hover span{
+.sorting-item:hover span {
   opacity: 1;
 }
-.sorting-item:hover{
+
+.sorting-item:hover {
   border-bottom: 1px dotted var(--basic-red);
 }
-.sorting-item:active{
+
+.sorting-item:active {
   opacity: 1;
   color: var(--basic-red);
   border: none;
 }
 
-.sorting-item-arrow{
+.sorting-item-arrow {
   padding: 10px 10px 10px 10px;
 }
 
-.sorting-item-arrow:hover>svg>path{
+.sorting-item-arrow:hover > svg > path {
   fill: var(--basic-black);
 }
 
-.sorting-item-arrow:active>svg>path{
+.sorting-item-arrow:active > svg > path {
   fill: var(--basic-red);
 }
 
@@ -1967,15 +1999,18 @@ img {
   margin: 0;
   margin-bottom: 26px;
 }
+
 .sorting-active {
   border: none;
 }
-.sorting-active>span {
+
+.sorting-active > span {
   color: var(--basic-red);
   opacity: 1;
 }
-.sorting-active>svg>path{
-  fill:var(--basic-red);
+
+.sorting-active > svg > path {
+  fill: var(--basic-red);
 }
 
 .pagination {
@@ -2044,9 +2079,9 @@ img {
 }
 
 .button-popup-cart {
-  font-family: var(--font-cuprum);
-  display: block;
+  display: none;
   width: 192px;
+  font-family: var(--font-cuprum);
   text-transform: uppercase;
   text-align: center;
   padding-top: 11px;
