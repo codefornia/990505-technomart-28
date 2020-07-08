@@ -1834,7 +1834,7 @@ margin-bottom: 26px;
 }
 
 .check-input:hover + .check-box {
-  background-image: url("../img/checkbox-off-hover.svg");
+  background-image: url("../img/checkbox-off.svg");
 }
 .check-input:checked:hover + .check-box {
   background-image: url("../img/checkbox-on-hover.svg");
@@ -1878,8 +1878,8 @@ margin-bottom: 26px;
 .check-input:hover + .radio {
   background-image: url("../img/radio-off-hover.svg");
 }
-.check-input:checked:hover + .check-box {
-  background-image: url("../img/radio.svg");
+.check-input:checked:hover + .radio {
+  background-image: url("../img/radio-on.svg");
 }
 .check-input:active + .radio {
   background-image: url("../img/radio-on-hover.svg");
