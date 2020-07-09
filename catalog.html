@@ -6,8 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class="page-body">
@@ -103,32 +103,32 @@
           <legend class="manufacturers-legend">Производители:</legend>
           <ul class="manufacturers-sort">
             <li>
-              <label class="option">
-                <input class="check-input" type="checkbox" name="bosch" checked>
+              <label class="option" for="check-bosch">
+                <input id="check-bosch" class="check-input" type="checkbox" name="bosch" checked>
                 <span class="check-box"></span>
                 bosch</label>
             </li>
             <li>
-              <label class="option">
-                <input class="check-input" type="checkbox" name="interscol">
+              <label class="option" for="check-interscol">
+                <input id="check-interscol" class="check-input" type="checkbox" name="interscol">
                 <span class="check-box"></span>
                 интерскол</label>
             </li>
             <li>
-              <label class="option">
-                <input class="check-input" type="checkbox" name="makita" checked>
+              <label class="option" for="check-makita">
+                <input id="check-makita" class="check-input" type="checkbox" name="makita" checked>
                 <span class="check-box"></span>
                 makita</label>
             </li>
             <li>
-              <label class="option">
-                <input class="check-input" type="checkbox" name="dewalt">
+              <label class="option" for="check-dewalt">
+                <input id="check-dewalt" class="check-input" type="checkbox" name="dewalt">
                 <span class="check-box"></span>
                 dewalt</label>
             </li>
             <li>
-              <label class="option">
-                <input class="check-input" type="checkbox" name="hitachi">
+              <label class="option" for="check-hitachi">
+                <input id="check-hitachi" class="check-input" type="checkbox" name="hitachi">
                 <span class="check-box"></span>
                 hitachi</label>
             </li>
@@ -138,15 +138,15 @@
           <legend class="power-legend">Питание:</legend>
           <ul class="power-sort">
             <li>
-              <label class="option radio-option">
-                <input class="check-input" type="radio" name="power-type" value="battery" checked>
+              <label class="option radio-option" for="radio-battery">
+                <input id="radio-battery" class="check-input" type="radio" name="power-type" value="battery" checked>
                 aккумуляторные
                 <span class="radio"></span>
               </label>
             </li>
             <li>
-              <label class="option radio-option">
-                <input class="check-input" type="radio" name="power-type" value="mains">
+              <label class="option radio-option" for="radio-mains">
+                <input id="radio-mains" class="check-input" type="radio" name="power-type" value="mains">
                 <span class="radio"></span>
                 cетевые</label>
             </li>
