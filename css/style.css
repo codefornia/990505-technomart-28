@@ -1818,7 +1818,7 @@ input[type=number] {
   position: relative;
   display: block;
   cursor: pointer;
-  padding: 11px 0px 11px 31px;
+  padding: 11px 0px 12px 31px;
 }
 
 
@@ -1830,22 +1830,18 @@ input[type=number] {
 
 .check-box {
   position: absolute;
-  left: 0px;
-  top: 9px;
-  width: 23px;
-  height: 100%;
+  left: 1px;
+  top: 7px;
+  width: 28px;
+  height: 26px;
   overflow: hidden;
   border-radius: 1px;
-  background-color: white;
   background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
 .check-input:checked + .check-box {
-  width: 25px;
-  height: 100%;
-  background-position: 0 0;
   background-image: url("../img/checkbox-on.svg");
 }
 
@@ -1857,14 +1853,19 @@ input[type=number] {
   background-image: url("../img/checkbox-on-hover.svg");
 }
 
-.check-input:active + .check-box {
-  background-image: url("../img/checkbox-on-hover.svg");
-  opacity: 0.3;
+.check-input:disabled + .check-box {
+  background-image: url("../img/checkbox-off-disabled.svg");
 }
 
-.check-input:checked:active + .check-box {
-  background-image: url("../img/checkbox-off-hover.svg");
-  opacity: 0.3;
+.check-input:checked:disabled + .check-box {
+  background-image: url("../img/checkbox-on-disabled.svg");
+}
+
+.check-input:checked:focus + .check-box {
+  background-image: url("../img/checkbox-on-focus.svg");
+}
+.check-input:focus + .check-box {
+  background-image: url("../img/checkbox-off-focus.svg");
 }
 
 .radio-option {
@@ -1874,41 +1875,43 @@ input[type=number] {
 .radio {
   position: absolute;
   left: 0px;
-  top: 9px;
-  width: 25px;
-  height: 25px;
+  top: 7px;
+  width: 29px;
+  height: 29px;
   overflow: hidden;
   border-radius: 1px;
   background-color: white;
   background-image: url("../img/radio-off.svg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.check-input:checked + .radio {
-  width: 25px;
-  height: 100%;
   background-position: 0 0;
+}
+.check-input:checked + .radio {
   background-image: url("../img/radio-on.svg");
 }
 
 .check-input:hover + .radio {
-  background-image: url("../img/radio-off-hover.svg");
+  background-image: url("../img/radio-off.svg");
 }
 
-.check-input:checked:hover + .radio {
-  background-image: url("../img/radio-on.svg");
-}
-
-.check-input:active + .radio {
+.check-input:checked:hover + .check-box {
   background-image: url("../img/radio-on-hover.svg");
-  opacity: 0.3;
 }
 
-.check-input:checked:active + .radio {
-  background-image: url("../img/radio-off-hover.svg");
-  opacity: 0.3;
+.check-input:disabled + .radio {
+  background-image: url("../img/radio-off-disabled.svg");
 }
+
+.check-input:checked:disabled + .radio {
+  background-image: url("../img/radio-on-disabled.svg");
+}
+
+.check-input:checked:focus + .radio {
+  background-image: url("../img/radio-on-focus.svg");
+}
+.check-input:focus + .radio {
+  background-image: url("../img/radio-off-focus.svg");
+}
+
 
 .sort-button {
   width: 100%;
