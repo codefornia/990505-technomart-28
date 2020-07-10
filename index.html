@@ -325,23 +325,23 @@
 </footer>
 <!--POPUPS-->
 
-<section class="popup-order">
+<section class="popup-order modal-show modal-error">
   <h2 class="visually-hidden">Данные пользователя</h2>
-  <form action="https://echo.htmlacademy.ru" method="post">
+  <form action="https://echo.htmlacademy.ru" method="post" class="order-form">
     <div class="popup-order-container">
       <div class="top-popup-order">
         <p class="user-name-item">
           <label for="user-name">Ваше имя:</label>
-          <input id="user-name" type="text" name="name" placeholder="Имя Фамилия" autofocus required>
+          <input class="user-name-input" id="user-name" type="text" name="name" placeholder="Имя Фамилия" autofocus required>
         </p>
         <p class="user-email-item">
           <label for="user-email">Ваш e-mail:</label>
-          <input id="user-email" type="email" name="email" placeholder="email@example.com" required>
+          <input class="user-email-input" id="user-email" type="email" name="email" placeholder="email@example.com" required>
         </p>
       </div>
       <p class="user-comment-item">
         <label for="user-comment">Текст письма:</label>
-        <textarea id="user-comment" name="comment" placeholder="В свободной форме" required></textarea>
+        <textarea class="user-comment-textarea" id="user-comment" name="comment" placeholder="В свободной форме" required></textarea>
       </p>
     </div>
     <div class="popup-order-grey">
@@ -370,5 +370,6 @@
   </div>
   <button type="button" class="button-close-cart button-close" aria-label="Закрыть"></button>
 </section>
+<script src="/js/script.js"></script>
 </body>
 </html>
