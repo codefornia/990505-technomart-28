@@ -5,10 +5,10 @@ var orderForm = orderPopup.querySelector(".order-form");
 var userNameInput = orderPopup.querySelector(".user-name-input");
 var userEmailInput = orderPopup.querySelector(".user-email-input");
 var userCommentTextarea = orderPopup.querySelector(".user-comment-textarea");
-var сartLink = document.querySelector(".buy-botton")
+var cartLink = document.querySelectorAll(".buy-botton")
 var cartPopup = document.querySelector(".popup-cart");
 var cartClose = cartPopup.querySelector(".button-close-cart");
-var buttonСontinue = cartPopup.querySelector(".button-continue");
+var buttonContinue = cartPopup.querySelector(".button-continue");
 
 var isStorageSupport = true;
 var storage = "";
@@ -69,17 +69,17 @@ window.addEventListener("keydown", function (evt) {
 
 
 
-сartLink.addEventListener("click", function (evt) {
+cartLink.addEventListener("click", function (evt) {
   evt.preventDefault();
   cartPopup.classList.add("modal-show");
-
+});
 
 cartClose.addEventListener("click", function (evt) {
   evt.preventDefault();
   cartClose.classList.remove("modal-show");
 });
 
-  buttonСontinue.addEventListener("click", function (evt) {
+  buttonContinue.addEventListener("click", function (evt) {
     evt.preventDefault();
     cartClose.classList.remove("modal-show");
   });
