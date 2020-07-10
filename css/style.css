@@ -494,6 +494,13 @@ img {
   background-size: 100% 100%;
 }
 
+.promo-slide-drills {
+  background-image: url("../img/index-slider2.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+
 .promo-slide-current {
   display: flex;
 }
@@ -532,14 +539,14 @@ img {
   margin-right: 10px;
   width: 12px;
   height: 12px;
-  background-color: var(--basic-red);
+  background-color: var(--basic-white);
   border: 2px solid var(--basic-white);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .radio-control-current {
-  background-color: var(--basic-white);
+  background-color: var(--basic-red);
 }
 
 .slide-heading {
