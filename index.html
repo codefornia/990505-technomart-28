@@ -5,7 +5,7 @@
   <title>HTML Academy: Техномарт</title>
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-body">
@@ -325,23 +325,23 @@
 </footer>
 <!--POPUPS-->
 
-<section class="popup-order modal-show modal-error">
+<section class="popup-order">
   <h2 class="visually-hidden">Данные пользователя</h2>
   <form action="https://echo.htmlacademy.ru" method="post" class="order-form">
     <div class="popup-order-container">
       <div class="top-popup-order">
         <p class="user-name-item">
           <label for="user-name">Ваше имя:</label>
-          <input class="user-name-input" id="user-name" type="text" name="name" placeholder="Имя Фамилия" autofocus required>
+          <input class="user-name-input" id="user-name" type="text" name="name" placeholder="Имя Фамилия">
         </p>
         <p class="user-email-item">
           <label for="user-email">Ваш e-mail:</label>
-          <input class="user-email-input" id="user-email" type="email" name="email" placeholder="email@example.com" required>
+          <input class="user-email-input" id="user-email" type="email" name="email" placeholder="email@example.com">
         </p>
       </div>
       <p class="user-comment-item">
         <label for="user-comment">Текст письма:</label>
-        <textarea class="user-comment-textarea" id="user-comment" name="comment" placeholder="В свободной форме" required></textarea>
+        <textarea class="user-comment-textarea" id="user-comment" name="comment" placeholder="В свободной форме"></textarea>
       </p>
     </div>
     <div class="popup-order-grey">
@@ -366,10 +366,10 @@
   <h2>Товар добавлен в корзину!</h2>
   <div class="popup-cart-buttons">
     <button type="button" class="button-red">Оформить заказ</button>
-    <button type="button" class="button-white">Продолжить покупки</button>
+    <button type="button" class="button-white button-continue">Продолжить покупки</button>
   </div>
   <button type="button" class="button-close-cart button-close" aria-label="Закрыть"></button>
 </section>
-<script src="/js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
