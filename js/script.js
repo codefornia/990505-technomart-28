@@ -5,13 +5,13 @@ var orderForm = orderPopup.querySelector(".order-form");
 var userNameInput = orderPopup.querySelector(".user-name-input");
 var userEmailInput = orderPopup.querySelector(".user-email-input");
 var userCommentTextarea = orderPopup.querySelector(".user-comment-textarea");
-var cartLinks = document.querySelectorAll(".buy-botton")
+var cartLinks = document.querySelectorAll(".buy-botton");
 var cartPopup = document.querySelector(".popup-cart");
 var cartClose = cartPopup.querySelector(".button-close-cart");
 var buttonContinue = cartPopup.querySelector(".button-continue");
-var mapPopup = document.querySelector(".popup-map")
-var mapLink = document.querySelector(".interactive-map")
-var mapClose = document.querySelector(".button-close-map")
+var mapPopup = document.querySelector(".popup-map");
+var mapLink = document.querySelector(".interactive-map");
+var mapClose = document.querySelector(".button-close-map");
 
 
 var isStorageSupport = true;
@@ -215,7 +215,7 @@ var tabsButton = document.querySelectorAll(".tabs-button");
 tabsButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   orderPopup.classList.add("modal-show");
-}
+});
 
 
 let sliders = document.getElementsByClassName('slider');
@@ -308,5 +308,26 @@ function setActiveButton(slider, index) {
     }
     i += 1;
   }
-}
 
+
+const tabsBlocks = document.getElementsByClassName('main-service-block');
+let i = 0;
+for (const tabsBlock of tabsBlocks) {
+  const buttons = tabsBlock.getElementsByClassName('tabs-button');
+  for (const button of buttons) {
+    const currentI = i;
+    button.addEventListener('click', () => {
+      const currentButton = tabsBlock.querySelector('.tabs-button-current');
+      const currentContent = tabsBlock.querySelector('.content-block-current');
+      if (currentButton) {
+        currentButton.classList.remove('tabs-button-current');
+      }
+      if (currentContent) {
+        currentContent.classList.remove('content-block-current');
+      }
+      button.classList.add('tabs-button-current');
+      tabsBlock.querySelectorAll('.content-block')[currentI].classList.add('content-block-current');
+    });
+    i += 1;
+  }
+}
