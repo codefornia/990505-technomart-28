@@ -1,64 +1,73 @@
 var orderLink = document.querySelector(".button-about-contacts");
 var orderPopup = document.querySelector(".popup-order");
-var orderClose = orderPopup.querySelector(".popup-order-close");
-var orderForm = orderPopup.querySelector(".order-form");
-var userNameInput = orderPopup.querySelector(".user-name-input");
-var userEmailInput = orderPopup.querySelector(".user-email-input");
-var userCommentTextarea = orderPopup.querySelector(".user-comment-textarea");
+if (orderPopup) {
+  var orderClose = orderPopup.querySelector(".popup-order-close");
+  var orderForm = orderPopup.querySelector(".order-form");
+  var userNameInput = orderPopup.querySelector(".user-username-input");
+  var userEmailInput = orderPopup.querySelector(".user-email-input");
+  var userCommentTextarea = orderPopup.querySelector(".user-comment-textarea");
+}
 var cartLinks = document.querySelectorAll(".buy-botton");
 var cartPopup = document.querySelector(".popup-cart");
-var cartClose = cartPopup.querySelector(".button-close-cart");
-var buttonContinue = cartPopup.querySelector(".button-continue");
+if (cartPopup) {
+  var cartClose = cartPopup.querySelector(".button-close-cart");
+  var buttonContinue = cartPopup.querySelector(".button-continue");
+}
 var mapPopup = document.querySelector(".popup-map");
 var mapLink = document.querySelector(".interactive-map");
 var mapClose = document.querySelector(".button-close-map");
 
 
 var isStorageSupport = true;
-var storage = "";
+
+var username = '';
+var email = '';
 
 try {
-  storage = localStorage.getItem("name");
-} catch (err) {
-  isStorageSupport = false;
-}
+  username = localStorage.getItem("username");
+  email = localStorage.getItem("email");
 
-orderLink.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  orderPopup.classList.add("modal-show");
-
-  if (storage) {
-    userNameInput.value = storage;
+  if (username) {
+    userNameInput.value = username;
     userEmailInput.focus();
   } else {
     userNameInput.focus();
   }
-});
 
-if (storage) {
-  userNameInput.value = storage;
-  userEmailInput.focus();
-} else {
-  userNameInput.focus();
+  if (email) {
+    userEmailInput.value = email;
+  }
+} catch (err) {
+  isStorageSupport = false;
 }
 
-orderClose.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  orderPopup.classList.remove("modal-show");
-  orderPopup.classList.remove("modal-error");
-});
-
-orderForm.addEventListener("submit", function (evt) {
-  if (!userNameInput.value || !userEmailInput.value || !userCommentTextarea.value) {
+if (orderLink) {
+  orderLink.addEventListener("click", function (evt) {
     evt.preventDefault();
+    orderPopup.classList.add("modal-show");
+  });
+}
+if (orderClose) {
+  orderClose.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    orderPopup.classList.remove("modal-show");
     orderPopup.classList.remove("modal-error");
-    orderPopup.offsetWidth = orderPopup.offsetWidth;
-    orderPopup.classList.add("modal-error");
-  } else {
-    localStorage.setItem("login", userNameInput.value);
-    localStorage.setItem("email", userEmailInput.value);
-  }
-});
+  });
+}
+
+if (orderForm) {
+  orderForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    if (!userNameInput.value || !userEmailInput.value || !userCommentTextarea.value) {
+      orderPopup.classList.remove("modal-error");
+      orderPopup.offsetWidth = orderPopup.offsetWidth;
+      orderPopup.classList.add("modal-error");
+    } else {
+      localStorage.setItem("username", userNameInput.value);
+      localStorage.setItem("email", userEmailInput.value);
+    }
+  });
+}
 
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
@@ -84,10 +93,12 @@ cartClose.addEventListener("click", function (evt) {
   cartPopup.classList.remove("modal-show");
 });
 
-buttonContinue.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  cartPopup.classList.remove("modal-show");
-});
+if (buttonContinue) {
+  buttonContinue.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    cartPopup.classList.remove("modal-show");
+  });
+}
 
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
@@ -98,16 +109,19 @@ window.addEventListener("keydown", function (evt) {
   }
 });
 
+if (mapLink) {
+  mapLink.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    mapPopup.classList.add("modal-show");
+  });
+}
 
-mapLink.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  mapPopup.classList.add("modal-show");
-});
-
-mapClose.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  mapPopup.classList.remove("modal-show");
-});
+if (mapClose) {
+  mapClose.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    mapPopup.classList.remove("modal-show");
+  });
+}
 
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
