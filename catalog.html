@@ -84,8 +84,8 @@
               <div class="scale">
                 <div class="bar"></div>
               </div>
-              <div class="toggle toggle-min" tabindex="0"></div>
-              <div class="toggle toggle-max" tabindex="0"></div>
+              <div class="toggle toggle-min" tabindex="0" aria-label="Минимальная цена" title="Минимальная цена"></div>
+              <div class="toggle toggle-max" tabindex="0" aria-label="Максимальная цена" title="Максимальная цена"></div>
             </div>
             <div class="price-controls">
             </div>
@@ -137,14 +137,14 @@
           <ul class="power-sort">
             <li>
               <label class="option radio-option">
-                <input class="check-input" type="radio" name="power-type" value="battery" checked>
+                <input class="check-input radio-input" type="radio" name="power-type" value="battery" checked>
                 aккумуляторные
                 <span class="radio"></span>
               </label>
             </li>
             <li>
               <label class="option radio-option">
-                <input class="check-input" type="radio" name="power-type" value="mains">
+                <input class="check-input radio-input" type="radio" name="power-type" value="mains">
                 <span class="radio"></span>
                 cетевые</label>
             </li>

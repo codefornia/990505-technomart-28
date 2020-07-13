@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 2 version,not dead,not ie<=11
+*/
+
 :root {
   --basic-white: #FFFFFF;
   --basic-white-opasity: rgba(255, 255, 255, 0.5);
@@ -38,8 +45,8 @@
   --border-grey: #EAEAEA;
   --tabs-color: #405069;
   --basic-shadow: rgba(0, 0, 0, 0.15);
-  --font-cuprum: 'Cuprum', 'Arial', sans-serif;
-  --font-pt-sans: 'Pt Sans', 'Arial', sans-serif;
+  --font-cuprum: "Cuprum", "Arial", sans-serif;
+  --font-pt-sans: "Pt Sans", "Arial", sans-serif;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -368,12 +375,13 @@ img {
 }
 
 .header-user-list {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .header-user-button {
   box-sizing: border-box;
-  float: left;
   padding: 9px 24px 11px 24px;
   margin-right: 10px;
   font-size: 21px;
@@ -702,7 +710,7 @@ img {
 }
 
 .product-new:before {
-  content: '';
+  content: " ";
   position: absolute;
   top: 0;
   right: 0;
@@ -1120,7 +1128,7 @@ img {
 }
 
 .delivery-company a::before {
-  content: '';
+  content: " ";
   position: absolute;
   top: 14px;
   left: 0px;
@@ -1739,7 +1747,7 @@ img {
   border: 8px solid var(--basic-white);
   background-color: var(--basic-grey-controls);
   border-radius: 50%;
-  box-shadow: 0 2px 1px 0 var(--basic-background);
+  box-shadow: 0 2px 1px 0 var(--basic-grey-controls);
   cursor: pointer;
 }
 
@@ -1893,30 +1901,30 @@ input[type=number] {
   background-repeat: no-repeat;
   background-position: 0 0;
 }
-.check-input:checked + .radio {
+.radio-input:checked + .radio {
   background-image: url("../img/radio-on.svg");
 }
 
-.check-input:hover + .radio {
+.radio-input:hover + .radio {
   background-image: url("../img/radio-off.svg");
 }
 
-.check-input:checked:hover + .check-box {
+.radio-input:checked:hover + .check-box {
   background-image: url("../img/radio-on-hover.svg");
 }
 
-.check-input:disabled + .radio {
+.radio-input:disabled + .radio {
   background-image: url("../img/radio-off-disabled.svg");
 }
 
-.check-input:checked:disabled + .radio {
+.radio-input:checked:disabled + .radio {
   background-image: url("../img/radio-on-disabled.svg");
 }
 
-.check-input:checked:focus + .radio {
+.radio-input:checked:focus + .radio {
   background-image: url("../img/radio-on-focus.svg");
 }
-.check-input:focus + .radio {
+.radio-input:focus + .radio {
   background-image: url("../img/radio-off-focus.svg");
 }
 
@@ -2120,7 +2128,26 @@ input[type=number] {
 
 .modal-show {
   display: block;
+  -webkit-animation: bounce 0.6s;
   animation: bounce 0.6s;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes bounce {
@@ -2142,8 +2169,33 @@ input[type=number] {
 }
 
 .modal-error {
+  -webkit-animation: shake 0.6s;
   animation: shake 0.6s;
 }
+
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 
 @keyframes shake {
   0%,
@@ -2166,4 +2218,3 @@ input[type=number] {
     transform: translateX(10px);
   }
 }
-

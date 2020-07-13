@@ -32,7 +32,7 @@ orderLink.addEventListener("click", function (evt) {
 
   if (storageName && !storageEmail) {
     orderName.value = storageName;
-   orderTextarea.focus();
+    orderTextarea.focus();
   } else if (storageName && storageEmail){
     orderName.value = storageName;
     orderEmail.value = storageEmail;
@@ -127,35 +127,35 @@ window.addEventListener("keydown", function (evt) {
   }
 });
 
-let sliders = document.getElementsByClassName('slider');
+let sliders = document.getElementsByClassName("slider");
 
 for (let slider of sliders) {
-  const leftButton = slider.querySelector('.slide-button-left');
-  const rightButton = slider.querySelector('.slide-button-right');
-  const radioButtons = slider.querySelectorAll('.radio-control');
+  const leftButton = slider.querySelector(".slide-button-left");
+  const rightButton = slider.querySelector(".slide-button-right");
+  const radioButtons = slider.querySelectorAll(".radio-control");
 
-  leftButton.addEventListener('click', () => {
+  leftButton.addEventListener("click", () => {
     moveLeft(slider);
   });
 
-  rightButton.addEventListener('click', () => {
+  rightButton.addEventListener("click", () => {
     moveRight(slider);
   });
 
   let i = 0;
   for (let radioButton of radioButtons) {
     const currentI = i;
-    radioButton.addEventListener('click', () => {
-      const currentButton = slider.querySelector('.radio-control-current');
-      const currentSlide = slider.querySelector('.promo-slide-current');
+    radioButton.addEventListener("click", () => {
+      const currentButton = slider.querySelector(".radio-control-current");
+      const currentSlide = slider.querySelector(".promo-slide-current");
       if (currentButton) {
-        currentButton.classList.remove('radio-control-current');
+        currentButton.classList.remove("radio-control-current");
       }
       if (currentSlide) {
-        currentSlide.classList.remove('promo-slide-current');
+        currentSlide.classList.remove("promo-slide-current");
       }
-      radioButton.classList.add('radio-control-current');
-      slider.querySelectorAll('.promo-slide')[currentI].classList.add('promo-slide-current');
+      radioButton.classList.add("radio-control-current");
+      slider.querySelectorAll(".promo-slide")[currentI].classList.add("promo-slide-current");
     });
     i += 1;
   }
@@ -166,77 +166,77 @@ for (let slider of sliders) {
 }
 
 function moveRight(slider) {
-  const slides = slider.querySelectorAll('.promo-slide');
+  const slides = slider.querySelectorAll(".promo-slide");
   let i = 0;
   let current = -1;
   let next = -1;
   for (let slide of slides) {
-    if (slide.classList.contains('promo-slide-current')) {
+    if (slide.classList.contains("promo-slide-current")) {
       current = i;
     }
     i += 1;
-    slide.classList.remove('promo-slide-current');
+    slide.classList.remove("promo-slide-current");
   }
   if (current === slides.length - 1) {
     next = 0;
   } else {
     next = current + 1;
   }
-  slides[next].classList.add('promo-slide-current');
+  slides[next].classList.add("promo-slide-current");
   setActiveButton(slider, next);
 }
 
 function moveLeft(slider) {
-  const slides = slider.querySelectorAll('.promo-slide');
+  const slides = slider.querySelectorAll(".promo-slide");
   let i = 0;
   let current = slides.length;
   let next = slides.length;
   for (let slide of slides) {
-    if (slide.classList.contains('promo-slide-current')) {
+    if (slide.classList.contains("promo-slide-current")) {
       current = i;
     }
     i += 1;
-    slide.classList.remove('promo-slide-current');
+    slide.classList.remove("promo-slide-current");
   }
   if (current === 0) {
     next = slides.length - 1;
   } else {
     next = current - 1;
   }
-  slides[next].classList.add('promo-slide-current');
+  slides[next].classList.add("promo-slide-current");
   setActiveButton(slider, next);
 }
 
 function setActiveButton(slider, index) {
-  const Buttons = slider.querySelectorAll('.radio-control');
+  const Buttons = slider.querySelectorAll(".radio-control");
   let i = 0;
   for (let Button of Buttons) {
-    Button.classList.remove('radio-control-current');
+    Button.classList.remove("radio-control-current");
     if (i === index) {
-      Button.classList.add('radio-control-current');
+      Button.classList.add("radio-control-current");
     }
     i += 1;
   }
 }
 
 
-const tabsBlocks = document.getElementsByClassName('main-service-block');
+const tabsBlocks = document.getElementsByClassName("main-service-block");
 let i = 0;
 for (const tabsBlock of tabsBlocks) {
-  const buttons = tabsBlock.getElementsByClassName('tabs-button');
+  const buttons = tabsBlock.getElementsByClassName("tabs-button");
   for (const button of buttons) {
     const currentI = i;
-    button.addEventListener('click', () => {
-      const currentButton = tabsBlock.querySelector('.tabs-button-current');
-      const currentContent = tabsBlock.querySelector('.content-block-current');
+    button.addEventListener("click", () => {
+      const currentButton = tabsBlock.querySelector(".tabs-button-current");
+      const currentContent = tabsBlock.querySelector(".content-block-current");
       if (currentButton) {
-        currentButton.classList.remove('tabs-button-current');
+        currentButton.classList.remove("tabs-button-current");
       }
       if (currentContent) {
-        currentContent.classList.remove('content-block-current');
+        currentContent.classList.remove("content-block-current");
       }
-      button.classList.add('tabs-button-current');
-      tabsBlock.querySelectorAll('.content-block')[currentI].classList.add('content-block-current');
+      button.classList.add("tabs-button-current");
+      tabsBlock.querySelectorAll(".content-block")[currentI].classList.add("content-block-current");
     });
     i += 1;
   }
